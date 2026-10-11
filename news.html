@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./reveal.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap">
+<style>
+html,body{margin:0;background:#F2F9FE;color:#16213A;font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;word-break:keep-all;}
+*{box-sizing:border-box;}
+a{color:#16213A;text-decoration:none;}
+a:hover{color:#1E9A4B;}
+button{font-family:inherit;}
+@media (max-width:1199px){[data-r=heroimg]{position:relative!important;width:100%!important;margin-top:8px}}@media (max-width:899px){[data-r=row]{flex-wrap:wrap!important}[data-r=thumb]{flex-basis:100%!important;aspect-ratio:3.4/1;align-self:auto!important}[data-r=arrow]{display:none!important}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;background:linear-gradient(180deg,#F2F9FE 0%,#F4FAFE 70%,#FFFFFF 100%);">
+  <dc-import name="fp-header" page="news" hint-size="100%,81px"></dc-import>
+
+  <section style="position:relative;overflow:hidden;padding-top:clamp(28px,3.5vw,52px);">
+    <span style="position:absolute;width:130px;height:130px;border-radius:50%;background:#DDEFFC;left:-65px;top:150px;pointer-events:none;"></span>
+    <div style="position:relative;max-width:1530px;margin:0 auto;min-height:300px;">
+      <img data-r="heroimg" src="assets/news-hero4.png" alt="태블릿을 함께 보며 웃는 아이들" style="position:absolute;right:0;top:0;width:55%;height:auto;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(0deg,transparent 0%,#000 18%),linear-gradient(180deg,transparent 0%,#000 8%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(0deg,transparent 0%,#000 18%),linear-gradient(180deg,transparent 0%,#000 8%);mask-composite:intersect;">
+      <div style="position:relative;z-index:1;max-width:1384px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(20px,4.7vw,72px) 0;display:flex;flex-direction:column;align-items:flex-start;">
+        <span style="font-size:15px;font-weight:600;letter-spacing:0.08em;color:#4FA8F0;">NEWS</span>
+        <h1 style="margin:24px 0 0;"><img src="assets/news-title2.png" alt="포커스팡 소식" style="display:block;width:min(340px,62vw);height:auto;"></h1>
+        <p style="margin:28px 0 0;font-size:clamp(18px,1.7vw,24px);line-height:1.55;color:#3A4558;font-weight:400;letter-spacing:normal;text-wrap:pretty;">우리 포커스팡은 최근 이런 활동들을 하고 있어요.</p>
+        <div role="tablist" style="margin-top:40px;display:flex;flex-wrap:wrap;gap:10px;">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+            <button role="tab" aria-selected="{{ f.on }}" onClick="{{ f.pick }}" style="padding:13px 26px;border-radius:999px;border:1.5px solid {{ f.border }};background:{{ f.bg }};color:{{ f.color }};font-size:16px;font-weight:700;cursor:pointer;box-shadow:{{ f.shadow }};">{{ f.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main style="flex:1;padding:clamp(40px,4vw,56px) clamp(20px,4.7vw,72px) clamp(80px,8vw,120px);">
+    <div style="max-width:1384px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(20px,2vw,28px);">
+      <sc-for list="{{ items }}" as="n" hint-placeholder-count="0">
+        <a data-r="row" href="https://3rinnovation.com/#news" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:clamp(24px,3vw,48px);padding:20px clamp(20px,2.4vw,36px) 20px 20px;border-radius:32px;background:#fff;box-shadow:0 14px 34px -28px rgba(30,70,110,0.5);color:#16213A;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-3px);box-shadow:0 22px 40px -26px rgba(30,70,110,0.55);color:#16213A;">
+          <div data-r="thumb" style="flex:0 0 clamp(240px,32vw,443px);align-self:stretch;min-height:clamp(150px,14vw,220px);border-radius:24px;overflow:hidden;background:#EAF4FD;">
+            <img src="{{ n.img }}" alt="{{ n.badge }}" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:16px;padding:28px 0;">
+            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px 26px;">
+              <span style="padding:5px 16px;border-radius:999px;background:{{ n.chipBg }};color:{{ n.chipInk }};font-size:15px;font-weight:800;">{{ n.cat }}</span>
+              <span style="font-size:{{ n.metaSize }};font-weight:{{ n.metaWeight }};font-family:{{ n.metaFont }};color:{{ n.metaColor }};">{{ n.meta }}</span>
+            </div>
+            <h2 style="margin:0;font-size:clamp(19px,1.6vw,23px);line-height:1.35;font-weight:800;letter-spacing:-0.03em;text-wrap:pretty;">{{ n.title }}</h2>
+            <p style="margin:0;font-size:15px;line-height:1.75;color:#4A5568;text-wrap:pretty;">{{ n.desc }}</p>
+          </div>
+        </a>
+      </sc-for>
+      <nav aria-label="페이지" style="margin-top:clamp(24px,3vw,40px);display:flex;justify-content:center;gap:8px;">
+        <a href="#" aria-current="page" style="padding:8px 12px;color:#6B7584;font-size:17px;font-weight:700;" style-hover="color:#16213A;">1</a>
+        <a href="#" aria-label="다음 페이지" style="padding:8px 12px;color:#16213A;font-size:17px;font-weight:700;" style-hover="color:#1E9A4B;">›</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer data-screen-label="09 Footer" style="background:#171717;color:#C3C9D3;margin-top:0;padding:64px 20px 32px;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+    <div style="display:flex;flex-wrap:wrap;gap:40px 64px;">
+      <div style="display:flex;flex-direction:column;gap:14px;flex:2 1 260px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <img src="assets/focuspang-logo.png" alt="" style="width:40px;height:40px;border-radius:10px;object-fit:contain;">
+          <img src="assets/wordmark-white.png" alt="포커스팡" style="height:28px;width:auto;display:block;">
+        </div>
+        <span style="font-size:15px;font-weight:700;color:#fff;">쓰리알이노베이션 (주)</span>
+        <span style="font-size:14px;">대표자: 조광수</span>
+        <span style="font-size:14px;">사업자등록번호: 245-81-02274</span>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+          <a href="https://www.linkedin.com/company/3rinnovation/posts/?feedView=all" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C3C9D3;" style-hover="color:#fff;"><span style="width:16px;height:16px;border-radius:3px;background:#C3C9D3;color:#171717;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;">in</span>LinkedIn</a>
+          <a href="https://3rinnovation.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C3C9D3;" style-hover="color:#fff;"><span style="width:16px;height:16px;border-radius:50%;border:2px solid #C3C9D3;"></span>회사 홈페이지</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;flex:1 1 180px;">
+        <span style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">서비스</span>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">교사용</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">학생용</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">관리자용</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;flex:1 1 180px;">
+        <span style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">고객센터</span>
+        <a href="mailto:care@focuspang.com" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C3C9D3;" style-hover="color:#fff;"><span style="font-size:14px;">✉</span>care@focuspang.com</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">개인정보처리방침 및 이용약관</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">개인정보처리방침</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">쿠키 설정</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #2C2C2C;padding-top:28px;text-align:center;font-size:13px;color:#8590A0;">© 2022–2026 3R Innovation. All rights reserved.</div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NEWS = [
+  { type: "research", cat: "연구", badge: "IAYMH 2026", meta: "2026 · 아일랜드 더블린", img: "assets/news-1.png", title: "IAYMH 2026에서 아동 부주의·과잉행동 연구를 발표했어요", desc: "과제 기반 디지털 표현형으로 아동의 부주의와 과잉행동을 임상적으로 예측하는 연구를 국제청소년정신건강학회(IAYMH 2026)에서 발표했습니다." },
+  { type: "company", cat: "회사 소식", badge: "ISO/IEC 27001", meta: "ISO/IEC 27001", img: "assets/news-2.png", title: "신뢰를 위한 더 단단한 기반을 갖췄어요", desc: "쓰리알이노베이션이 정보보호 관리체계 국제표준인 ISO/IEC 27001 인증을 획득했습니다." },
+  { type: "research", cat: "연구", badge: "BICOMH 2026", meta: "2026.07.15 · 싱가포르", img: "assets/news-3.png", title: "디지털 표현형 연구를 세계 연구 무대에 소개했어요", desc: "일상적인 상호작용과 정신건강 신호에 관한 연구를 싱가포르에서 열린 BICOMH 2026에서 발표했습니다." },
+  { type: "research", cat: "연구", badge: "교육정보미디어연구", meta: "2025 · 학술지 논문", img: "assets/news-4.png", title: "학습자가 스스로 자신의 주의를 이해하도록 돕습니다", desc: "학습자 데이터를 기반으로 메타주의 지원 전략을 개발한 연구가 학술지 『교육정보미디어연구』 31(3)에 게재되었습니다." },
+];
+class Component extends DCLogic {
+  state = { filter: "all" };
+  componentDidMount() { setTimeout(() => window.fpReveal && window.fpReveal(), 60); }
+  renderVals() {
+    const f = this.state.filter;
+    const defs = [["all", "전체"], ["research", "연구"], ["company", "회사 소식"]];
+    return {
+      filters: defs.map(([k, label]) => {
+        const on = f === k;
+        return { label, on, count: k === "all" ? NEWS.length : NEWS.filter(n => n.type === k).length, pick: () => this.setState({ filter: k }), bg: on ? "#1FBF5C" : "#fff", color: on ? "#fff" : "#16213A", border: on ? "#1FBF5C" : "#E3E9EE", shadow: on ? "0 10px 20px -12px rgba(30,170,90,0.8)" : "none" };
+      }),
+      items: NEWS.filter(n => f === "all" || n.type === f).map(n => {
+        const co = n.type === "company";
+        return { ...n, bgImg: "url('" + n.img + "')", chipBg: co ? "#E3F5E6" : "#E3F0FD", chipInk: co ? "#1E9A4B" : "#2A7DBF", metaSize: co ? "22px" : "16px", metaWeight: co ? 800 : 500, metaFont: "inherit", metaColor: co ? "#22B95A" : "#6B7584" };
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>

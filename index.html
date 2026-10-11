@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./reveal.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Song+Myung&family=Gaegu:wght@700&display=swap">
+<style>
+html{scroll-padding-top:96px;}html,body{margin:0;background:#FFFFFF;color:#16213A;font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;word-break:keep-all;}
+*{box-sizing:border-box;}
+a{color:#16213A;text-decoration:none;}
+a:hover{color:#2E9B5C;}
+input,textarea,button{font-family:inherit;}
+@keyframes fpMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.goog-te-banner-frame,.skiptranslate>iframe,#goog-gt-tt,.goog-te-balloon-frame,.VIpgJd-ZVi9od-ORHb-OEVmcd{display:none!important;}body{top:0!important;}font[style]{background:transparent!important;box-shadow:none!important;}
+@media (max-width:719px){
+[data-r=nav],[data-r=help],[data-r=ydeco]{display:none!important}
+[data-r=menu]{display:flex!important}
+[data-r=hdr]{flex-wrap:nowrap!important;justify-content:space-between!important;padding:12px 16px!important}
+[data-r=hbtn]{width:40px!important;height:40px!important}
+[data-r=login]{padding:10px 18px!important;font-size:15px!important;margin-left:0!important}
+[data-r=logo] img:first-child{width:30px!important;height:30px!important}
+[data-r=logo] img+img{height:22px!important}
+[data-r=stats]{grid-template-columns:1fr 1fr!important;border-radius:28px!important;row-gap:22px!important;padding:22px 10px!important}
+[data-r=stat]{flex-direction:column!important;text-align:center!important;gap:10px!important;border-left:0!important;padding:0 4px!important}
+[data-r=stat]>span{width:56px!important;height:56px!important}
+[data-r=stat] div span+span{white-space:normal!important;font-size:13px!important}
+[data-r=banner]{gap:12px!important}
+[data-r=qcol]{padding:0!important;align-items:flex-start!important;text-align:left!important}
+[data-r=qcol]>span:first-child{margin:0!important}
+[data-r=qbox]{width:100%!important;margin:28px 0 0!important;padding:0 30px 0 36px!important}
+[data-r=qbox] br,[data-r=pind] br{display:none}
+[data-r=qbox] p{text-align:left!important}
+[data-r=qbox]>div{align-items:flex-start!important}
+[data-r=pq]{padding:0 30px 0 40px!important}
+[data-r=pind]{margin-left:0!important}
+[data-r=yt]{padding:14px 22px!important;font-size:16px!important}
+[data-r=card]{border-radius:24px!important}
+}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;">
+
+<dc-import name="fp-header" page="home" hint-size="100%,81px"></dc-import>
+
+<section id="top" data-screen-label="01 Hero" style="position:relative;overflow:hidden;padding-top:0;background:linear-gradient(180deg,#F2F8FC 0%,#F7FBFD 70%,#FFFFFF 100%);padding-bottom:48px;">
+
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));align-items:center;gap:24px;padding-left:clamp(20px,5vw,80px);">
+    <div style="position:relative;display:flex;flex-direction:column;gap:24px;padding:clamp(24px,4vw,56px) clamp(20px,2vw,24px) clamp(24px,4vw,56px) 0;">
+      <span style="font-size:15px;font-weight:600;letter-spacing:0.08em;color:#4FA8F0;">ONLINE LEARNING PLATFORM</span>
+      <h1 style="margin:0;"><img src="assets/hero-title-v2.png" alt="선생님, 지금 산만한 교실에서 너무 지치지 않으신가요?" style="display:block;width:100%;max-width:620px;height:auto;"></h1>
+      <p style="margin:0;font-size:clamp(18px,1.7vw,24px);line-height:1.55;color:#3A4558;">포커스팡과 함께라면, 이제 웃을 수 있어요.</p>
+      <a href="login.html" style="align-self:flex-start;margin-top:12px;display:flex;align-items:center;gap:22px;padding:14px 14px 14px 38px;border-radius:999px;background:#3DCF6E;color:#fff;font-size:21px;font-weight:700;box-shadow:0 16px 30px -16px rgba(40,170,90,0.8);" style-hover="background:#33B95F;color:#fff;">우리 교실 바꿔보기 <span style="width:48px;height:48px;border-radius:50%;background:#fff;color:#2DB85C;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;">→</span></a>
+    </div>
+    <div style="position:relative;height:clamp(380px,46vw,700px);">
+      <span style="position:absolute;top:0;bottom:12%;left:6%;right:0;background:#86C7FA;border-radius:62% 0 0 0 / 100% 0 0 0;transform:rotate(-4deg);transform-origin:right bottom;"></span>
+      <div style="position:absolute;top:6%;bottom:0;left:0;right:0;background:#EAF4FB url('assets/hero-bg.png') center 40%/cover no-repeat;border-radius:48% 0 0 30% / 62% 0 0 22%;"></div>
+      <span style="position:absolute;width:clamp(70px,8vw,120px);height:clamp(70px,8vw,120px);border-radius:50%;background:#FFD84D;left:-3%;top:18%;"></span>
+      <span style="position:absolute;width:clamp(70px,8vw,120px);height:clamp(70px,8vw,120px);border-radius:50%;background:#FF8FB1;right:-50px;top:30%;opacity:0.95;"></span>
+      <span style="position:absolute;right:7%;top:9%;font-family:'Caveat',cursive;font-size:clamp(22px,2.2vw,34px);line-height:1.05;color:#36C265;transform:rotate(-8deg);display:flex;flex-direction:column;text-shadow:0 1px 6px rgba(255,255,255,0.8);"><span>More</span><span>Focus</span><span>Brighter</span><span>Classrooms</span></span>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:3;max-width:1400px;margin:-24px auto 0;padding:0 clamp(16px,4vw,60px);">
+    <div data-r="stats" style="background:#fff;border-radius:48px;box-shadow:0 20px 50px -30px rgba(30,60,100,0.35);padding:clamp(20px,2.4vw,32px) clamp(16px,2.4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));row-gap:20px;">
+      <div data-r="stat" style="display:flex;align-items:center;gap:20px;padding:6px clamp(12px,2vw,32px);">
+        <span style="width:clamp(64px,5.6vw,84px);height:clamp(64px,5.6vw,84px);flex:none;border-radius:50%;background:#E3F0FD;display:flex;align-items:center;justify-content:center;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3D8FE8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/></svg></span>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:clamp(24px,2.3vw,32px);font-weight:800;letter-spacing:-0.02em;color:#16213A;">1,200+</span><span style="font-size:15px;color:#6B7584;white-space:nowrap;">도입 기관</span></div>
+      </div>
+      <div data-r="stat" style="display:flex;align-items:center;gap:20px;padding:6px clamp(12px,2vw,32px);border-left:1px solid #EDF0F3;">
+        <span style="width:clamp(64px,5.6vw,84px);height:clamp(64px,5.6vw,84px);flex:none;border-radius:50%;background:#DDF5E5;display:flex;align-items:center;justify-content:center;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2DB85C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M15 14.2c2.9-.4 6 1.4 6 4.8"/></svg></span>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:clamp(24px,2.3vw,32px);font-weight:800;letter-spacing:-0.02em;color:#16213A;">50만+</span><span style="font-size:15px;color:#6B7584;white-space:nowrap;">함께한 학생</span></div>
+      </div>
+      <div data-r="stat" style="display:flex;align-items:center;gap:20px;padding:6px clamp(12px,2vw,32px);border-left:1px solid #EDF0F3;">
+        <span style="width:clamp(64px,5.6vw,84px);height:clamp(64px,5.6vw,84px);flex:none;border-radius:50%;background:#FDE4EC;display:flex;align-items:center;justify-content:center;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#F0648F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="#F0648F"/></svg></span>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:clamp(24px,2.3vw,32px);font-weight:800;letter-spacing:-0.02em;color:#16213A;">90%</span><span style="font-size:15px;color:#6B7584;white-space:nowrap;">실제 이상 행동 탐지율</span></div>
+      </div>
+      <div data-r="stat" style="display:flex;align-items:center;gap:20px;padding:6px clamp(12px,2vw,32px);border-left:1px solid #EDF0F3;">
+        <span style="width:clamp(64px,5.6vw,84px);height:clamp(64px,5.6vw,84px);flex:none;border-radius:50%;background:#FFF1C7;display:flex;align-items:center;justify-content:center;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E9A80F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z"/><path d="M12 8.5v6"/><path d="m9.5 12.5 2.5 2.5 2.5-2.5"/></svg></span>
+        <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:clamp(24px,2.3vw,32px);font-weight:800;letter-spacing:-0.02em;color:#16213A;">80%↓</span><span style="font-size:15px;color:#6B7584;white-space:nowrap;">오탐지 감소</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Partners" style="padding:clamp(72px,8vw,112px) 0 clamp(80px,9vw,120px);">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:32px;">
+    <h2 style="margin:0;padding:0 20px;font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-0.03em;text-align:center;color:#16213A;text-wrap:balance;"><span style="color:#22B95A;">믿을 수 있는 기관들이</span> 포커스팡과 함께합니다!</h2>
+    <div style="width:100%;overflow:hidden;padding:10px 0 18px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);">{{ partnerMarquee }}</div>
+  </div>
+</section>
+
+<section id="about" style="background:linear-gradient(90deg,#A6EA5E 0%,#3FD9B8 45%,#2FCFE0 60%,#5BB8F5 100%);padding:34px 24px;">
+  <div data-r="banner" style="display:flex;align-items:center;justify-content:center;gap:28px;">
+    <span style="font-size:34px;line-height:1;color:#fff;">☆</span>
+    <h2 style="margin:0;font-size:clamp(20px,2.4vw,30px);font-weight:800;letter-spacing:-0.03em;color:#fff;text-align:center;text-shadow:0 1px 8px rgba(0,80,90,0.18);">우리는 아이들의 빛나는 미래를 응원합니다!</h2>
+    <span style="display:flex;flex-direction:column;gap:6px;"><span style="width:16px;height:3px;border-radius:2px;background:#fff;transform:rotate(-30deg);"></span><span style="width:18px;height:3px;border-radius:2px;background:#fff;"></span><span style="width:16px;height:3px;border-radius:2px;background:#fff;transform:rotate(30deg);"></span></span>
+  </div>
+</section>
+
+<section data-screen-label="03 Reviews" style="padding:clamp(56px,7vw,96px) 20px clamp(96px,11vw,160px);">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,6vw,72px);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,4vw,56px);align-items:center;">
+      <div style="position:relative;aspect-ratio:16/9;border-radius:24px;background:#E4F3FD;overflow:hidden;">
+        <span style="position:absolute;width:260px;height:150px;border-radius:50%;background:#D3EAFA;left:-40px;bottom:-80px;"></span>
+        <span style="position:absolute;width:160px;height:120px;border-radius:50%;background:#D3EAFA;left:130px;bottom:-70px;"></span>
+        <image-slot id="review-teacher" shape="rounded" radius="24" placeholder="선생님 사진" src="assets/review-teacher.png"></image-slot>
+      </div>
+      <div data-r="qcol" style="padding-right:56px;display:flex;flex-direction:column;gap:0;align-items:flex-end;text-align:right;">
+        <span style="margin-right:-16px;padding:5px 16px;border-radius:999px;background:#D4ECFB;color:#2A7DBF;font-size:14px;font-weight:700;">Teacher</span>
+        <h3 style="margin:14px 0 0;font-size:26px;line-height:1.3;font-weight:800;letter-spacing:-0.03em;">선생님 실제 사용 후기</h3>
+        <p style="margin:8px 0 0;font-size:15px;font-weight:500;color:#4A5568;">OO중학교 김OO 선생님</p>
+        <div data-r="qbox" style="width:calc(100% + 52px);max-width:520px;position:relative;margin:32px -52px 0 0;padding:0 52px 0 44px;">
+          <span style="font-family:Georgia,serif;font-weight:900;font-size:50px;line-height:0.8;color:#CFE8FA;position:absolute;left:0;top:-2px;">“</span>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
+            <p style="margin:0;font-size:16px;line-height:1.85;color:#1E2738;text-wrap:balance;text-align:right;">수업에 필요한 기능이 한곳에 모여 있어<br>준비부터 진행까지 훨씬 편리해졌어요.</p>
+            <p style="margin:0;font-size:16px;line-height:1.85;color:#1E2738;text-wrap:balance;text-align:right;">학생들과 같은 화면을 보며 바로 표시하고<br>설명할 수 있어 수업에 더 집중할 수 있었어요.</p>
+            <p style="margin:0;font-size:16px;line-height:1.85;color:#1E2738;text-wrap:balance;text-align:right;"><span style="background:linear-gradient(180deg,transparent 64%,#BFE3FF 64%,#BFE3FF 96%,transparent 96%);font-weight:700;padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;">무엇보다 여러 화면을 오가지 않아도<br>수업 흐름이 끊기지 않아 가장 만족스러워요.</span></p>
+          </div>
+          <span style="font-family:Georgia,serif;font-weight:900;font-size:50px;line-height:0.8;color:#CFE8FA;position:absolute;right:0;bottom:-16px;">”</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap-reverse;gap:clamp(28px,4vw,56px);align-items:center;">
+      <div data-r="qcol" style="padding-left:56px;flex:1 1 300px;display:flex;flex-direction:column;gap:0;align-items:flex-start;">
+        <span style="margin-left:-16px;padding:5px 16px;border-radius:999px;background:#E4F5C4;color:#4E8A0A;font-size:14px;font-weight:700;">Student</span>
+        <h3 style="margin:14px 0 0;font-size:26px;line-height:1.3;font-weight:800;letter-spacing:-0.03em;">학생의 실제 사용 후기</h3>
+        <p style="margin:8px 0 0;font-size:15px;font-weight:500;color:#4A5568;">OO중학교 김OO 학생</p>
+        <div data-r="qbox" style="width:calc(100% + 52px);max-width:520px;position:relative;margin:32px 0 0 -52px;padding:0 44px 0 52px;">
+          <span style="font-family:Georgia,serif;font-weight:900;font-size:50px;line-height:0.8;color:#9ED94A;position:absolute;left:0;top:-2px;">“</span>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <p style="margin:0;font-size:16px;line-height:1.85;color:#1E2738;text-wrap:balance;">선생님이 화면에 직접 그리며 설명해 주시고,<br>중간중간 친구들과 퀴즈도 풀 수 있어<br>어려운 내용도 재미있게 이해할 수 있었어요.</p>
+            <p style="margin:0;font-size:16px;line-height:1.85;color:#1E2738;text-wrap:balance;"><span style="background:linear-gradient(180deg,transparent 76%,#C6EE86 76%,#C6EE86 98%,transparent 98%);font-weight:700;padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;">그냥 설명만 듣는 수업보다<br>친구들과 함께 배우는 느낌이라 좋아요.</span></p>
+          </div>
+          <span style="font-family:Georgia,serif;font-weight:900;font-size:50px;line-height:0.8;color:#9ED94A;position:absolute;right:0;bottom:-16px;">”</span>
+        </div>
+      </div>
+      <div style="flex:1 1 300px;position:relative;aspect-ratio:16/9;border-radius:24px;background:#F2FAE3;overflow:hidden;">
+        <span style="position:absolute;width:240px;height:150px;border-radius:50%;background:#DDF1B8;right:-40px;bottom:-80px;"></span>
+        <span style="position:absolute;width:150px;height:110px;border-radius:50%;background:#DDF1B8;right:150px;bottom:-70px;"></span>
+        <image-slot id="review-student" shape="rounded" radius="24" placeholder="학생 사진" src="assets/review-student2.png"></image-slot>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Home care" style="padding:0 20px;">
+  <div style="position:relative;max-width:1320px;margin:0 auto;border-radius:40px;background:linear-gradient(180deg,#F1F9EE 0%,#F6FBF4 100%);padding:clamp(36px,4.5vw,56px) clamp(20px,5vw,72px) clamp(40px,5vw,64px);overflow:hidden;">
+    <span style="position:absolute;width:300px;height:300px;border-radius:50%;background:#DDF1DC;left:-120px;top:170px;pointer-events:none;"></span>
+    <span style="position:absolute;width:90px;height:90px;border-radius:50%;background:#FFE27A;left:14px;bottom:80px;pointer-events:none;"></span>
+    <span style="position:absolute;width:120px;height:120px;border-radius:50%;background:#FFE27A;right:150px;top:170px;pointer-events:none;"></span>
+    <span style="position:absolute;width:280px;height:380px;border-radius:50%;background:#DDF1DC;right:-120px;top:190px;pointer-events:none;"></span>
+
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;margin-bottom:clamp(28px,3.5vw,44px);">
+      <span style="padding:6px 22px;border-radius:999px;background:#D7F0D9;color:#1E9A4B;font-size:16px;font-weight:700;">Parent</span>
+      <div style="position:relative;display:flex;align-items:center;gap:14px;">
+        <span style="position:absolute;left:-52px;top:-22px;"><span style="display:flex;gap:6px;align-items:flex-end;transform:rotate(-20deg);"><span style="width:4px;height:14px;border-radius:2px;background:#3DCF6E;transform:rotate(-30deg);"></span><span style="width:4px;height:20px;border-radius:2px;background:#3DCF6E;"></span><span style="width:4px;height:14px;border-radius:2px;background:#3DCF6E;transform:rotate(30deg);"></span></span></span>
+        <h2 style="margin:0;"><img src="assets/homecare-title.png" alt="집에서도 이렇게 케어할 수 있어요!" style="display:block;width:min(520px,72vw);height:auto;"></h2>
+      </div>
+      <p style="margin:0;font-size:clamp(15px,1.4vw,19px);color:#4A5568;text-wrap:balance;">포커스팡과 함께라면, 학교 밖에서도 아이의 성장을 응원할 수 있어요.</p>
+    </div>
+
+    <div style="position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(24px,2.5vw,32px);">
+      <div style="position:relative;flex:0 1 280px;width:100%;max-width:280px;aspect-ratio:9/16;border-radius:26px;background:#fff;overflow:hidden;box-shadow:0 24px 48px -26px rgba(20,60,30,0.6);border:4px solid #fff;">
+        <iframe data-view-autoplay="1" src="https://player.vimeo.com/video/1233937994?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&color=3DCF6E&muted=1&loop=1&playsinline=1" title="모먼트 인터뷰형 쇼츠" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;transform:scale(1.05);transform-origin:center;"></iframe>
+      </div>
+      <div data-r="card" style="position:relative;flex:1 1 440px;max-width:680px;background:#fff;border-radius:32px;box-shadow:0 20px 50px -34px rgba(30,80,40,0.35);padding:clamp(28px,3.5vw,44px) clamp(24px,3.5vw,48px);display:flex;flex-direction:column;gap:24px;">
+        <span style="align-self:flex-start;padding:7px 18px;border-radius:999px;background:#E3F5E4;color:#1E9A4B;font-size:15px;font-weight:700;">부모 사용 후기</span>
+        <div data-r="pq" style="position:relative;padding:0 56px 0 64px;">
+          <span style="position:absolute;left:0;top:-6px;font-family:Georgia,serif;font-weight:900;font-size:72px;line-height:0.8;color:#9FDDA9;">“</span>
+          <p style="margin:0;font-size:clamp(20px,2vw,28px);line-height:1.45;font-weight:800;letter-spacing:-0.03em;color:#16213A;">아이의 마음을 먼저 이해하는 게<br><span style="color:#22B95A;background:linear-gradient(180deg,transparent 64%,#D9F5DE 64%,#D9F5DE 96%,transparent 96%);">중요하다는 걸 알게 됐어요.</span></p>
+          <span style="position:absolute;right:0;bottom:-28px;font-family:Georgia,serif;font-weight:900;font-size:72px;line-height:0.8;color:#7FD38E;">”</span>
+        </div>
+        <p data-r="pind" style="margin:0 0 0 64px;font-size:16px;line-height:1.8;color:#4A5568;text-wrap:balance;">예전에는 아이가 왜 대화를 피하는지 이해하기 어려웠어요.<br>아이에게 관심을 표현한다고 생각했지만,<br>정작 아이의 이야기를 충분히 듣지 못했던 것 같아요.</p>
+        <div data-r="pind" style="margin-left:64px;display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:18px;background:#F1F8F0;">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2DB85C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></svg>
+          <p style="margin:0;font-size:16px;line-height:1.65;color:#16213A;">이제는 아이의 감정을 먼저 살피고,<br><strong style="color:#1E9A4B;font-weight:800;">작은 이야기부터 편안하게 나누려고 노력하고 있어요.</strong></p>
+        </div>
+        <a data-r="pind" href="https://www.momentlumina.com/ko" target="_blank" rel="noopener" style="margin-left:64px;align-self:flex-start;display:flex;align-items:center;gap:16px;padding:12px 28px 12px 12px;border-radius:999px;background:#2FC768;color:#fff;font-size:18px;font-weight:700;box-shadow:0 14px 28px -16px rgba(30,160,80,0.8);" style-hover="background:#26B05A;color:#fff;"><span style="width:42px;height:42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;"><span style="width:0;height:0;border-left:13px solid #2FC768;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px;"></span></span>아이와 가까워지기<span style="font-size:22px;margin-left:10px;">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="exam" data-screen-label="05 AI exam" style="position:relative;padding:clamp(72px,8vw,112px) 20px;overflow:hidden;">
+  <span style="position:absolute;width:90px;height:90px;border-radius:50%;background:#EAF7EE;left:9%;top:60px;pointer-events:none;"></span>
+  <div style="position:relative;max-width:1320px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(32px,4vw,52px);">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;">
+      <span style="display:flex;align-items:center;gap:8px;padding:8px 20px;border-radius:999px;background:#E6F6EA;color:#16213A;font-size:16px;font-weight:700;"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2.5 4.5 5.5v5.8c0 4.6 3.2 8.5 7.5 9.7 4.3-1.2 7.5-5.1 7.5-9.7V5.5z" fill="#1E9A4B"/><path d="m8.5 12 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI 시험감독</span>
+      <h2 style="margin:0;"><img src="assets/exam-title.png" alt="시험은 더 공정하게, 감독은 더 스마트하게." style="display:block;width:min(680px,86vw);height:auto;"></h2>
+      <p style="margin:0;font-size:clamp(15px,1.4vw,19px);color:#4A5568;text-wrap:balance;">AI 기술로 시험 현황을 실시간으로 확인하고, 선생님은 학생과 시험 운영에 더 집중할 수 있어요.</p>
+    </div>
+    <div style="width:100%;max-width:960px;display:flex;justify-content:center;">
+      <div style="width:100%;border-radius:28px;box-shadow:0 20px 50px -30px rgba(30,60,90,0.45);overflow:hidden;">
+        <div style="position:relative;aspect-ratio:16/9;background:#fff;overflow:hidden;">
+          <iframe data-view-autoplay="1" src="https://player.vimeo.com/video/1233938173?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&color=3DCF6E&quality=1080p&muted=1&loop=1&playsinline=1" title="AI 시험 감독_포커스팡" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;transform:scale(1.04);transform-origin:center;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="toolkit" data-screen-label="05b Self regulation" style="position:relative;padding:clamp(56px,7vw,96px) 20px;overflow:hidden;background:#FFFFFF;">
+  <span style="position:absolute;width:120px;height:120px;border-radius:50%;background:#FFE27A;left:4%;top:90px;pointer-events:none;"></span>
+  <span style="position:absolute;width:64px;height:64px;border-radius:50%;background:#FFE27A;right:6%;bottom:70px;pointer-events:none;"></span>
+  <div style="position:relative;max-width:1320px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(28px,3.5vw,44px);">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;">
+      <span style="display:flex;align-items:center;gap:8px;padding:8px 24px;border-radius:999px;background:#EEF7E2;color:#1E9A4B;font-size:16px;font-weight:700;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E9A4B" stroke-width="1.7" stroke-linejoin="round"><path d="M12 5c2 2.2 2.8 4.6 2.8 7S13.6 16.6 12 18c-1.6-1.4-2.8-3.6-2.8-6S10 7.2 12 5z"/><path d="M12 18c-2.6 0-6-1.4-7.5-4.6 2-.6 4.4-.2 6 1.2M12 18c2.6 0 6-1.4 7.5-4.6-2-.6-4.4-.2-6 1.2"/></svg>자기조절 툴킷</span>
+      <h2 style="margin:0;"><img src="assets/medi-title-v2.png" alt="시험 전, 마음부터 차분하게 준비해요." style="display:block;width:min(820px,88vw);height:auto;"></h2>
+      <p style="margin:0;font-size:clamp(15px,1.4vw,19px);color:#4A5568;text-wrap:balance;">짧은 명상과 호흡으로 긴장을 가라앉히고, 집중하기 좋은 상태를 만들어보세요.</p>
+    </div>
+    <div style="width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(28px,4vw,72px);">
+      <div style="position:relative;flex:1 1 min(100%,640px);max-width:1040px;aspect-ratio:16/10;min-height:min(640px,120vw);border-radius:24px;overflow:hidden;border:1px solid #E8EDE6;box-shadow:0 22px 48px -28px rgba(40,80,40,0.45);background:#fff;">
+        <iframe src="https://fopang-content-marketing.github.io/toolkit/#home" title="자기조절 툴킷" sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-presentation allow-downloads allow-popups allow-popups-to-escape-sandbox" loading="eager" scrolling="yes" allowfullscreen allow="autoplay; fullscreen; clipboard-write; microphone; camera; accelerometer; gyroscope" style="position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff;"></iframe>
+        
+      </div>
+      <div style="position:relative;display:flex;align-items:flex-start;gap:6px;">
+        <a href="https://fopang-content-marketing.github.io/toolkit/#home" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:24px;padding:14px 14px 14px 40px;border-radius:999px;background:#3DCF6E;color:#fff;font-size:20px;font-weight:800;box-shadow:0 16px 30px -16px rgba(40,170,90,0.8);" style-hover="background:#33B95F;color:#fff;">툴킷 체험하러 가기 <span style="width:50px;height:50px;border-radius:50%;background:#fff;color:#2DB85C;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;">→</span></a>
+        <span style="margin-top:-30px;"><span style="display:flex;gap:6px;align-items:flex-end;transform:rotate(30deg);"><span style="width:4px;height:14px;border-radius:2px;background:#9BD86A;transform:rotate(-30deg);"></span><span style="width:4px;height:20px;border-radius:2px;background:#9BD86A;"></span><span style="width:4px;height:14px;border-radius:2px;background:#9BD86A;transform:rotate(30deg);"></span></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news" data-screen-label="06 Contents" style="padding:clamp(48px,6vw,96px) 20px 0;">
+  <div style="position:relative;max-width:1320px;margin:0 auto;border-radius:40px;background:linear-gradient(180deg,#F7FAF2 0%,#FBFCF7 100%);padding:clamp(36px,4.5vw,56px) clamp(16px,4vw,56px) clamp(40px,5vw,60px);display:flex;flex-direction:column;align-items:center;gap:clamp(28px,3.5vw,44px);overflow:hidden;">
+    <span style="position:absolute;width:260px;height:220px;border-radius:50%;background:#E8F5E1;left:-110px;top:-90px;pointer-events:none;"></span>
+    <span style="position:absolute;width:280px;height:280px;border-radius:50%;background:#FFF6D9;left:-120px;bottom:-130px;pointer-events:none;"></span>
+    <span style="position:absolute;width:300px;height:200px;border-radius:50%;background:#E3F3DA;right:-80px;bottom:-90px;pointer-events:none;"></span>
+    <span style="position:absolute;left:9%;top:15%;font-size:34px;line-height:1;color:#F5C63C;pointer-events:none;">★</span>
+    <span style="position:absolute;left:5%;top:32%;font-size:90px;line-height:1;color:#FBEFC4;pointer-events:none;">☆</span>
+    <span style="position:absolute;right:4%;top:8%;font-size:64px;line-height:1;color:#D3EDD6;pointer-events:none;">★</span>
+    <span style="position:absolute;right:5%;bottom:9%;font-size:30px;line-height:1;color:#F5C63C;pointer-events:none;">★</span>
+
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;">
+      <span style="display:flex;align-items:center;gap:8px;padding:9px 26px;border-radius:999px;background:#FFF1C7;font-family:'Gaegu','Nanum Pen Script',cursive;font-size:19px;font-weight:700;color:#3A3F44;">아이들의 마음이 반짝이는 시간 <span style="color:#F5B91E;">✦</span></span>
+      <h2 style="margin:0;"><img src="assets/contents-title2.png" alt="성장기의 불안을 겪는 아이들을 위한 콘텐츠" style="display:block;width:min(640px,84vw);height:auto;"></h2>
+    </div>
+
+    <div onMouseLeave="{{ carouselLeave }}" style="position:relative;width:100%;max-width:1180px;display:{{ carousel.display }};flex-direction:column;gap:16px;aspect-ratio:{{ carousel.ratio }};">
+      <sc-for list="{{ videos }}" as="v" hint-placeholder-count="3">
+        <div onMouseEnter="{{ v.enter }}" style="position:{{ v.pos }};left:{{ v.left }};top:{{ v.top }};width:{{ v.width }};z-index:{{ v.z }};opacity:{{ v.opacity }};aspect-ratio:16/9;border-radius:22px;background:#fff;overflow:hidden;border:4px solid #fff;box-shadow:0 22px 44px -26px rgba(40,90,50,0.45);transition:left .6s cubic-bezier(.22,.8,.24,1),top .6s cubic-bezier(.22,.8,.24,1),width .6s cubic-bezier(.22,.8,.24,1),opacity .6s;cursor:{{ v.cursor }};">
+          <iframe data-view-autoplay="{{ v.viewAuto }}" src="{{ v.src }}" title="{{ v.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:{{ v.pe }};"></iframe>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="position:relative;display:flex;align-items:center;gap:22px;">
+      <span data-r="ydeco" style="display:flex;flex-direction:column;gap:7px;align-items:flex-end;"><span style="width:16px;height:4px;border-radius:2px;background:#F5B91E;transform:rotate(-30deg);"></span><span style="width:18px;height:4px;border-radius:2px;background:#F5B91E;"></span><span style="width:16px;height:4px;border-radius:2px;background:#F5B91E;transform:rotate(30deg);"></span></span>
+      <a href="https://www.youtube.com/@fopang_3r/videos" target="_blank" rel="noopener" data-r="yt" style="display:flex;align-items:center;gap:14px;padding:16px 36px;border-radius:999px;background:#fff;border:2px solid #BDE6C3;font-size:18px;font-weight:800;color:#16213A;box-shadow:0 14px 30px -22px rgba(40,120,60,0.6);" style-hover="border-color:#3DCF6E;color:#16213A;"><span style="width:40px;height:28px;border-radius:8px;background:#FF0033;display:flex;align-items:center;justify-content:center;"><span style="width:0;height:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px;"></span></span>포팡이 유튜브 채널 바로가기 ↗</a>
+      <span data-r="ydeco" style="display:flex;flex-direction:column;gap:7px;align-items:flex-start;"><span style="width:16px;height:4px;border-radius:2px;background:#F5B91E;transform:rotate(30deg);"></span><span style="width:18px;height:4px;border-radius:2px;background:#F5B91E;"></span><span style="width:16px;height:4px;border-radius:2px;background:#F5B91E;transform:rotate(-30deg);"></span></span>
+    </div>
+  </div>
+</section>
+
+<section id="guide" data-screen-label="07 FAQ" style="position:relative;padding:clamp(72px,8vw,112px) 20px clamp(40px,5vw,64px);overflow:hidden;">
+  <span style="position:absolute;width:340px;height:340px;border-radius:50%;background:#E6F3FC;left:38%;top:44%;pointer-events:none;"></span>
+  <span style="position:absolute;width:160px;height:160px;border-radius:50%;background:#EAF7EA;left:32%;top:48%;pointer-events:none;"></span>
+  <span style="position:absolute;width:260px;height:200px;border-radius:50%;background:#EAF6EC;left:-120px;top:60%;pointer-events:none;"></span>
+  <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(36px,4vw,48px);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,4vw,56px);align-items:start;">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px;">
+        <span style="padding:6px 22px;border-radius:999px;background:#E1F4E5;color:#1E9A4B;font-size:16px;font-weight:800;letter-spacing:0.06em;">FAQ</span>
+        <h2 style="margin:0;"><img src="assets/faq-title.png" alt="자주 묻는 질문 궁금한 점을 확인해보세요!" style="display:block;width:min(520px,86vw);height:auto;"></h2>
+        <p style="margin:0;font-size:clamp(16px,1.4vw,19px);line-height:1.65;color:#4A5568;">포커스팡에 대해 자주 묻는 질문과 답변을 모았어요.<br>더 궁금한 점이 있으시면 언제든 문의해주세요.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+          <div style="border-radius:22px;background:#fff;border:1.5px solid #E6EBEF;box-shadow:0 12px 30px -26px rgba(30,60,90,0.35);overflow:hidden;">
+            <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:18px;padding:20px 26px;background:none;border:none;cursor:pointer;text-align:left;font-size:18px;font-weight:800;color:#16213A;">
+              <span style="width:38px;height:38px;flex:none;border-radius:50%;background:#1E9A4B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;">Q</span>
+              <span style="flex:1;">{{ f.q }}</span>
+              <span style="font-size:26px;font-weight:500;color:#4A5568;line-height:1;">{{ f.icon }}</span>
+            </button>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <div style="margin:0 14px 14px;padding:18px 20px;border-radius:16px;background:#F0F8F1;display:flex;gap:16px;">
+                <span style="width:34px;height:34px;flex:none;border-radius:50%;background:#FFC93C;color:#16213A;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;">A</span>
+                <span style="padding-top:4px;font-size:16px;line-height:1.8;color:#2B3650;text-wrap:pretty;">{{ f.a }}</span>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div id="contact" data-screen-label="08 Contact" style="position:relative;border-radius:32px;background:linear-gradient(100deg,#D6EBFB 0%,#E6F4F6 50%,#E4F6E4 100%);padding:clamp(32px,4vw,52px) clamp(24px,6vw,96px);display:flex;flex-wrap:wrap;align-items:center;gap:28px clamp(32px,5vw,72px);overflow:hidden;">
+      <span style="position:absolute;width:200px;height:120px;border-radius:50%;background:rgba(255,255,255,0.7);right:-30px;bottom:-40px;pointer-events:none;"></span>
+      <svg width="420" height="200" viewBox="0 0 420 200" fill="none" style="position:absolute;right:4%;top:10%;pointer-events:none;opacity:0.9;"><path d="M10 190 C 120 110, 150 140, 190 100 S 260 40, 300 70 S 360 60, 400 20" stroke="#7FD49A" stroke-width="2" stroke-dasharray="6 7"/><path d="M370 10 L410 4 L392 40 L384 24 Z" fill="#5CCB86"/></svg>
+      <p style="position:relative;margin:0;font-size:clamp(22px,2.4vw,32px);line-height:1.35;font-weight:800;letter-spacing:-0.03em;color:#16213A;display:flex;flex-direction:column;"><span>더 궁금한 점이 있으신가요?</span><span style="color:#22B95A;">언제든지 문의해주세요!</span></p>
+      <div style="position:relative;display:flex;align-items:flex-start;gap:14px;">
+        <a href="mailto:care@focuspang.com" style="display:flex;align-items:center;gap:22px;padding:12px 12px 12px 36px;border-radius:999px;background:#1E9A4B;color:#fff;font-size:20px;font-weight:800;box-shadow:0 14px 28px -16px rgba(20,120,60,0.8);" style-hover="background:#178440;color:#fff;">문의하기 <span style="width:46px;height:46px;border-radius:50%;background:#fff;color:#1E9A4B;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;">→</span></a>
+        <span style="display:flex;gap:6px;align-items:flex-end;transform:rotate(-15deg);"><span style="width:4px;height:14px;border-radius:2px;background:#6FD08C;transform:rotate(-30deg);"></span><span style="width:4px;height:20px;border-radius:2px;background:#6FD08C;"></span><span style="width:4px;height:14px;border-radius:2px;background:#6FD08C;transform:rotate(30deg);"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="09 Footer" style="background:#171717;color:#C3C9D3;margin-top:24px;padding:64px 20px 32px;">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+    <div style="display:flex;flex-wrap:wrap;gap:40px 64px;">
+      <div style="display:flex;flex-direction:column;gap:14px;flex:2 1 260px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <img src="assets/focuspang-logo.png" alt="" style="width:40px;height:40px;border-radius:10px;object-fit:contain;">
+          <img src="assets/wordmark-white.png" alt="포커스팡" style="height:28px;width:auto;display:block;">
+        </div>
+        <span style="font-size:15px;font-weight:700;color:#fff;">쓰리알이노베이션 (주)</span>
+        <span style="font-size:14px;">대표자: 조광수</span>
+        <span style="font-size:14px;">사업자등록번호: 245-81-02274</span>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+          <a href="https://www.linkedin.com/company/3rinnovation/posts/?feedView=all" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C3C9D3;" style-hover="color:#fff;"><span style="width:16px;height:16px;border-radius:3px;background:#C3C9D3;color:#171717;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;">in</span>LinkedIn</a>
+          <a href="https://3rinnovation.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C3C9D3;" style-hover="color:#fff;"><span style="width:16px;height:16px;border-radius:50%;border:2px solid #C3C9D3;"></span>회사 홈페이지</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;flex:1 1 180px;">
+        <span style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">서비스</span>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">교사용</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">학생용</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">관리자용</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;flex:1 1 180px;">
+        <span style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">고객센터</span>
+        <a href="mailto:care@focuspang.com" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#C3C9D3;" style-hover="color:#fff;"><span style="font-size:14px;">✉</span>care@focuspang.com</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">개인정보처리방침 및 이용약관</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">개인정보처리방침</a>
+        <a href="#" style="font-size:14px;color:#C3C9D3;" style-hover="color:#fff;">쿠키 설정</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #2C2C2C;padding-top:28px;text-align:center;font-size:13px;color:#8590A0;">© 2022–2026 3R Innovation. All rights reserved.</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const partnerLogos = [['smoe','서울특별시교육청'],['snu','서울대학교'],['aiis','서울대학교 AI연구원'],['snumed','서울대학교 의과대학'],['cnuh','충남대학교병원'],['samsung','삼성'],['harvard','Harvard Medical School'],['kt','KT'],['nie','NIE · Nanyang Technological University'],['korea','고려대학교'],['lghv','LG헬로비전'],['halcyon','Halcyon'],['kau','한국항공대학교'],['ktcloud','kt cloud'],['stanford','Stanford University']];
+const PartnerMarquee = React.memo(function PartnerMarquee() {
+  const [paused, setPaused] = React.useState(false);
+  const tile = (f, a, k) => React.createElement('div', { key: k, style: { flex: '0 0 180px', height: 96, marginRight: 16, borderRadius: 16, background: '#fff', boxShadow: '0 10px 24px -18px rgba(30,50,80,0.45)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' } },
+    React.createElement('img', { src: 'assets/p-' + f + '.png', alt: k >= partnerLogos.length ? '' : a, style: { width: '100%', height: '100%', objectFit: 'contain' } }));
+  const all = partnerLogos.concat(partnerLogos);
+  return React.createElement('div', { onMouseEnter: () => setPaused(true), onMouseLeave: () => setPaused(false), style: { display: 'flex', width: 'max-content', animation: 'fpMarquee 48s linear infinite', animationPlayState: paused ? 'paused' : 'running' } },
+    all.map(([f, a], i) => tile(f, a, i)));
+});
+const VIMEO_IDS = ["1233942403", "1233939980", "1233943716"];
+class Component extends DCLogic {
+  state = { open: 0, w: typeof window !== "undefined" ? window.innerWidth : 1280 };
+  componentDidMount() { setTimeout(() => window.fpReveal && window.fpReveal(), 60); this.onResize = () => this.forceUpdate(); window.addEventListener("resize", this.onResize); this.mq = window.matchMedia("(max-width: 819px)"); this.mq.addEventListener("change", this.onResize); this.ro = new ResizeObserver(this.onResize); this.ro.observe(document.documentElement); this.setupViewAutoplay(); }
+  setupNavPill() {
+    const nav = document.querySelector('[data-fp-nav]'); if (!nav) return;
+    const links = [...nav.querySelectorAll('a[data-top]')]; if (!links.length) return;
+    const pill = document.createElement('span');
+    pill.style.cssText = 'position:absolute;left:0;top:0;z-index:0;border-radius:999px;background:#3DCF6E;pointer-events:none;transition:transform .35s cubic-bezier(.4,0,.2,1),width .35s cubic-bezier(.4,0,.2,1),height .35s;';
+    nav.prepend(pill);
+    let active = links[0];
+    const place = (anim) => {
+      if (!anim) pill.style.transition = 'none';
+      pill.style.width = active.offsetWidth + 'px'; pill.style.height = active.offsetHeight + 'px';
+      const nr = nav.getBoundingClientRect(), ar = active.getBoundingClientRect(); pill.style.transform = 'translate(' + (ar.left - nr.left) + 'px,' + (ar.top - nr.top) + 'px)';
+      links.forEach(l => { const on = l === active; l.style.color = on ? '#fff' : ''; l.style.fontWeight = on ? '700' : ''; l.style.background = on ? 'transparent' : ''; });
+      if (!anim) { pill.offsetWidth; pill.style.transition = 'transform .35s cubic-bezier(.4,0,.2,1),width .35s cubic-bezier(.4,0,.2,1),height .35s'; }
+    };
+    links.forEach(l => l.addEventListener('click', () => { active = l; place(true); }));
+    place(false); requestAnimationFrame(() => place(false));
+    this.navRO = new ResizeObserver(() => place(false)); this.navRO.observe(nav);
+  }
+  setupTranslate() {
+    window.googleTranslateElementInit = () => { try { new window.google.translate.TranslateElement({ pageLanguage: "ko", autoDisplay: false }, "gt_el"); } catch (e) {} };
+    if (!document.getElementById("gt-script")) { const s = document.createElement("script"); s.id = "gt-script"; s.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"; document.body.appendChild(s); }
+  }
+  setLang(code) {
+    this.setState({ lang: code, langOpen: false });
+    const apply = (tries) => {
+      const combo = document.querySelector("select.goog-te-combo");
+      if (!combo) { if (tries > 0) setTimeout(() => apply(tries - 1), 300); return; }
+      combo.value = code === "ko" ? "ko" : code;
+      combo.dispatchEvent(new Event("change"));
+      if (code === "ko") { document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"; const f = document.querySelector("iframe.goog-te-banner-frame"); const btn = f && f.contentDocument && f.contentDocument.querySelector("button[id$=restore]"); if (btn) btn.click(); }
+    };
+    apply(20);
+  }
+  setupViewAutoplay() {
+    const send = (f, method, value) => { try { f.contentWindow && f.contentWindow.postMessage(JSON.stringify(value === undefined ? { method } : { method, value }), "https://player.vimeo.com"); } catch (e) {} };
+    const unmute = f => { send(f, "setMuted", false); send(f, "setVolume", 1); };
+    const visible = new Set();
+    this.unlock = () => { if (this.soundOn) return; this.soundOn = true; visible.forEach(f => { if (f.dataset.viewAutoplay !== "0") { unmute(f); send(f, "play"); } }); };
+    ["pointerdown", "keydown", "touchstart"].forEach(ev => window.addEventListener(ev, this.unlock, { passive: true }));
+    this.io = new IntersectionObserver(entries => entries.forEach(en => {
+      const f = en.target;
+      if (f.dataset.viewAutoplay === "0") { visible.delete(f); send(f, "pause"); return; }
+      if (en.intersectionRatio >= 0.6) { visible.add(f); if (this.soundOn) unmute(f); send(f, "play"); }
+      else { visible.delete(f); send(f, "pause"); }
+    }), { threshold: [0, 0.6] });
+    const attach = () => document.querySelectorAll('iframe[data-view-autoplay]').forEach(f => { if (!f.__io) { f.__io = 1; this.io.observe(f); f.addEventListener("load", () => { if (f.dataset.viewAutoplay === "0") return; const r = f.getBoundingClientRect(); if (r.top < innerHeight * 0.8 && r.bottom > innerHeight * 0.2) { visible.add(f); if (this.soundOn) unmute(f); send(f, "play"); } }); } });
+    attach(); this.ioTimer = setTimeout(attach, 1500);
+  }
+  componentWillUnmount() { this.navRO && this.navRO.disconnect(); window.removeEventListener("resize", this.onResize); this.mq && this.mq.removeEventListener("change", this.onResize); this.ro && this.ro.disconnect(); this.io && this.io.disconnect(); ["pointerdown", "keydown", "touchstart"].forEach(ev => window.removeEventListener(ev, this.unlock)); clearTimeout(this.ioTimer); }
+  renderVals() {
+    const items = [
+      { q: '포커스팡은 어떤 서비스인가요?', a: '포커스팡은 학생들의 집중력 향상과 자기주도학습을 돕는 AI 기반 학습 플랫폼입니다. 시간표, 과제 관리, 퀴즈, 명상, 포커스타임 등 다양한 기능을 통해 학교와 가정에서 모두 활용할 수 있어요.' },
+      { q: '어떤 학생들에게 적합한가요?', a: '초등학생부터 고등학생까지 누구나 사용할 수 있어요. 특히 수업에 집중하기 어렵거나, 스스로 공부 습관을 만들고 싶은 학생들에게 도움이 됩니다.' },
+      { q: '가정에서도 이용할 수 있나요?', a: '네, 가능해요. App Store 또는 Google Play에서 앱을 내려받으면 집에서도 집중·마음돌봄 콘텐츠와 학습 관리 기능을 이용할 수 있어요.' },
+    ];
+    const narrow = (typeof window !== "undefined" ? window.innerWidth : 1280) < 1100;
+    const hdr = narrow ? { display: "flex" } : { display: "grid" };
+    const vNarrow = (typeof window !== "undefined" ? window.innerWidth : 1280) < 720;
+    const LANGS = [["ko","한국어"],["en","English"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["fr","Français"],["th","ไทย"],["vi","Tiếng Việt"],["es","Español"],["de","Deutsch"]];
+    const curLang = this.state.lang || "ko";
+    return {
+      hdrOffset: (typeof window !== "undefined" && window.innerWidth < 720) ? "70px" : narrow ? "150px" : "84px",
+      menuOpen: !!this.state.menuOpen,
+      aboutOpen: !!this.state.aboutOpen,
+      aboutLeft: this.state.aboutLeftPx || "0px",
+      openAbout: () => { clearTimeout(this.aboutT); const nav = document.querySelector('[data-fp-nav]'); const a = nav && nav.querySelector('a[href="#about"][data-top]'); const left = a ? (a.getBoundingClientRect().left - nav.getBoundingClientRect().left) + "px" : "0px"; this.setState({ aboutOpen: true, aboutLeftPx: left }); },
+      closeAbout: () => { clearTimeout(this.aboutT); this.aboutT = setTimeout(() => this.setState({ aboutOpen: false }), 120); },
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen, langOpen: false })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      mobileLinks: [["홈","#top"],["소개 · 회사 소개","https://3rinnovation.com/"],["소개 · 포커스팡 소개","#about"],["소개 · 기능 소개","#exam"],["소개 · 모먼트 소개","https://www.momentlumina.com/ko"],["소개 · 자기조절 툴킷 소개","https://fopang-content-marketing.github.io/toolkit/#home"],["뉴스","news.html"],["시작 가이드","https://guide.focuspang.ai/"],["도움말 ↗","https://portal.focuspang.com/ko/ask"]].map(([label, href]) => ({ label, href, target: href.startsWith("http") ? "_blank" : "_self" })),
+      langOpen: !!this.state.langOpen,
+      toggleLang: () => this.setState(s => ({ langOpen: !s.langOpen, menuOpen: false })),
+      closeLang: () => this.setState({ langOpen: false }),
+      langs: LANGS.map(([code, label]) => ({ label, on: curLang === code, check: curLang === code ? "✓" : "", bg: curLang === code ? "#EAF7EE" : "transparent", fw: curLang === code ? 800 : 500, pick: () => this.setLang(code) })),
+      hdr,
+      videoPlaying: !!this.state.playing,
+      videoIdle: !this.state.playing,
+      playVideo: () => this.setState({ playing: true }),
+      examPlaying: !!this.state.examPlaying,
+      examIdle: !this.state.examPlaying,
+      playExam: () => this.setState({ examPlaying: true }),
+      partnerMarquee: React.createElement(PartnerMarquee),
+      carouselLeave: () => this.setState({ carouselHover: false }),
+      carousel: vNarrow ? { display: "flex", ratio: "auto" } : { display: "block", ratio: "1180 / 340" },
+      videos: [0, 1, 2].map(i => {
+        const center = this.state.center ?? 0;
+        const slot = (i - center + 3) % 3; // 0 center, 1 right, 2 left
+        const isCenter = slot === 0;
+        const playing = isCenter && this.state.carouselHover;
+        const geo = vNarrow ? { pos: "relative", left: "auto", top: "auto", width: "100%" }
+          : slot === 0 ? { pos: "absolute", left: "26%", top: "0%", width: "48%" }
+          : slot === 1 ? { pos: "absolute", left: "75.5%", top: "21%", width: "24.5%" }
+          : { pos: "absolute", left: "0%", top: "21%", width: "24.5%" };
+        const id = VIMEO_IDS[i];
+        return {
+          ...geo,
+          z: isCenter ? 3 : 1,
+          opacity: isCenter || vNarrow ? 1 : 0.92,
+          cursor: isCenter ? "default" : "pointer",
+          pe: isCenter || vNarrow ? "auto" : "none",
+          viewAuto: isCenter ? "1" : "0",
+          src: "https://player.vimeo.com/video/" + id + "?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&color=3DCF6E&muted=1&loop=1&playsinline=1" + (playing ? "&autoplay=1" : ""),
+          title: ["위글위글 댄스", "행복영상", "아침명상"][i],
+          enter: () => {
+            if (vNarrow) return;
+            if (isCenter) { this.setState({ carouselHover: true }); return; }
+            const now = Date.now();
+            if (this.rotLock && now < this.rotLock) return;
+            this.rotLock = now + 900;
+            this.setState({ center: i, carouselHover: true });
+          },
+        };
+      }),
+
+      faqs: items.map((f, i) => ({
+        ...f,
+        open: this.state.open === i,
+        icon: this.state.open === i ? '−' : '+',
+        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

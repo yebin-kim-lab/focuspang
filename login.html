@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+html,body{margin:0;background:#FFFFFF;color:#16213A;font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;word-break:keep-all;}
+*{box-sizing:border-box;}
+a{color:#16213A;text-decoration:none;}
+a:hover{color:#1E9A4B;}
+input,button{font-family:inherit;}
+input::placeholder{color:#9AA3AE;}
+@media (max-width:719px){[data-r=nav]{display:none!important}[data-r=hdr]{padding:12px 16px!important;flex-wrap:nowrap!important}[data-r=cta]{padding:10px 16px!important;font-size:14px!important}[data-r=tab]{font-size:15px!important;height:52px!important}[data-r=btn]{font-size:15px!important;gap:6px!important}[data-r=links]{gap:10px!important;font-size:14px!important;flex-wrap:wrap;justify-content:center}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;background:#fff;">
+  <dc-import name="fp-header" page="login" hint-size="100%,81px"></dc-import>
+
+  <main style="flex:1;display:flex;flex-direction:column;align-items:center;padding:clamp(48px,7vw,88px) 20px clamp(48px,6vw,80px);">
+    <h1 style="margin:0;font-size:clamp(32px,3.6vw,44px);font-weight:800;letter-spacing:-0.04em;color:#16213A;">로그인</h1>
+
+    <div style="width:100%;max-width:560px;margin-top:clamp(36px,4vw,48px);border:1px solid #E3E7EB;border-radius:14px;background:#fff;overflow:hidden;">
+      <div role="tablist" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+          <button data-r="tab" role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="height:60px;border:0;border-left:{{ t.bl }};border-bottom:{{ t.bb }};background:{{ t.bg }};font-size:17px;font-weight:{{ t.fw }};color:{{ t.color }};cursor:pointer;">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <form onSubmit="{{ submit }}" style="padding:clamp(28px,4vw,44px) clamp(24px,5vw,56px) clamp(32px,4vw,44px);display:flex;flex-direction:column;">
+        <label style="display:flex;flex-direction:column;gap:14px;">
+          <span style="font-size:15px;color:#4A5568;">{{ idLabel }}</span>
+          <input type="text" value="{{ email }}" onChange="{{ onEmail }}" onFocus="{{ focusEmail }}" onBlur="{{ blur }}" style="height:48px;border:0;border-bottom:1.5px solid {{ emailBorder }};outline:none;background:transparent;font-size:18px;color:#16213A;padding:0 2px;">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:14px;margin-top:32px;">
+          <span style="font-size:15px;color:#4A5568;">비밀번호</span>
+          <span style="display:flex;align-items:center;border-bottom:1.5px solid {{ pwBorder }};">
+            <input type="{{ pwType }}" value="{{ pw }}" onChange="{{ onPw }}" onFocus="{{ focusPw }}" onBlur="{{ blur }}" style="flex:1;min-width:0;height:48px;border:0;outline:none;background:transparent;font-size:18px;color:#16213A;padding:0 2px;">
+            <button type="button" onClick="{{ togglePw }}" aria-label="{{ pwToggleLabel }}" style="border:0;background:none;padding:6px;cursor:pointer;display:flex;color:#8A94A3;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </span>
+        </label>
+        <label style="display:flex;align-items:center;gap:10px;margin-top:32px;cursor:pointer;font-size:16px;color:#16213A;">
+          <input type="checkbox" checked="{{ keep }}" onChange="{{ toggleKeep }}" style="width:20px;height:20px;margin:0;accent-color:#3DCF6E;cursor:pointer;">로그인 상태 유지
+        </label>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;">
+          <button data-r="btn" type="button" style="height:56px;border:0;border-radius:8px;background:#F3F4F6;color:#16213A;font-size:17px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;" style-hover="background:#E9EBEE;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16213A" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.2"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM14 18.5h2M18.5 14v2"/></svg>QR 코드 로그인</button>
+          <button data-r="btn" type="submit" disabled="{{ disabled }}" style="height:56px;border:0;border-radius:8px;background:{{ btnBg }};color:#fff;font-size:17px;font-weight:700;cursor:{{ btnCursor }};transition:background .2s;">{{ btnLabel }}</button>
+        </div>
+        <div data-r="links" style="display:flex;justify-content:center;align-items:center;gap:16px;margin-top:28px;font-size:16px;">
+          <a href="#" style="color:#16213A;">구글 계정 로그인</a>
+          <span style="width:1px;height:14px;background:#DADFE5;"></span>
+          <a href="#" style="color:#16213A;">웨일 스페이스 로그인</a>
+        </div>
+      </form>
+    </div>
+
+    <div data-r="links" style="display:flex;align-items:center;gap:16px;margin-top:28px;font-size:16px;color:#4A5568;">
+      <a href="#" style="color:#4A5568;">아이디 찾기</a>
+      <span style="width:1px;height:14px;background:#DADFE5;"></span>
+      <a href="#" style="color:#4A5568;">비밀번호 찾기</a>
+      <span style="width:1px;height:14px;background:#DADFE5;"></span>
+      <a id="signup" href="#" style="color:#1E9A4B;font-weight:800;">회원가입</a>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { email: "", pw: "", show: false, focus: null, sent: false, tab: 0, keep: false };
+  renderVals() {
+    const { email, pw, show, focus, sent, tab, keep } = this.state;
+    const ready = email.trim().length > 0 && pw.length > 0;
+    const labels = ["선생님", "학생", "학부모", "관리자"];
+    return {
+      tabs: labels.map((label, i) => {
+        const on = tab === i;
+        return { label, on, pick: () => this.setState({ tab: i }), bg: on ? "#fff" : "#F5F6F8", fw: on ? 800 : 500, color: on ? "#16213A" : "#5A6577", bb: on ? "1px solid transparent" : "1px solid #E3E7EB", bl: i === 0 ? "0" : "1px solid #E3E7EB" };
+      }),
+      idLabel: tab === 1 ? "아이디" : "아이디 또는 학교 이메일",
+      email, pw, keep,
+      toggleKeep: () => this.setState(s => ({ keep: !s.keep })),
+      onEmail: e => this.setState({ email: e.target.value, sent: false }),
+      onPw: e => this.setState({ pw: e.target.value, sent: false }),
+      focusEmail: () => this.setState({ focus: "email" }),
+      focusPw: () => this.setState({ focus: "pw" }),
+      blur: () => this.setState({ focus: null }),
+      emailBorder: focus === "email" ? "#3DCF6E" : "#E3E7EB",
+      pwBorder: focus === "pw" ? "#3DCF6E" : "#E3E7EB",
+      pwType: show ? "text" : "password",
+      pwToggleLabel: show ? "비밀번호 숨기기" : "비밀번호 보기",
+      togglePw: () => this.setState(s => ({ show: !s.show })),
+      disabled: !ready,
+      btnBg: ready ? "#3DCF6E" : "#A9E5BC",
+      btnCursor: ready ? "pointer" : "default",
+      btnLabel: sent ? "로그인 중…" : "로그인",
+      submit: e => { e.preventDefault(); if (ready) this.setState({ sent: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

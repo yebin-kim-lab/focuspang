@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+.goog-te-banner-frame,.skiptranslate>iframe,#goog-gt-tt,.goog-te-balloon-frame,.VIpgJd-ZVi9od-ORHb-OEVmcd{display:none!important;}body{top:0!important;}font[style]{background:transparent!important;box-shadow:none!important;}
+@media (max-width:719px){
+[data-h=nav],[data-h=help]{display:none!important}
+[data-h=menu]{display:flex!important}
+[data-h=hdr]{flex-wrap:nowrap!important;justify-content:space-between!important;padding:12px 16px!important}
+[data-h=hbtn]{width:40px!important;height:40px!important}
+[data-h=login]{padding:10px 18px!important;font-size:15px!important;margin-left:0!important}
+[data-h=logo] img:first-child{width:30px!important;height:30px!important}
+[data-h=logo] img+img{height:22px!important}
+}
+</style>
+</helmet>
+<header data-h="hdr" style="position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(230,235,240,0.8);padding:16px clamp(20px,5vw,80px);display:{{ hdrDisplay }};flex-wrap:wrap;justify-content:center;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px 20px;">
+  <a data-h="logo" href="{{ homeHref }}" style="justify-self:start;display:flex;align-items:center;gap:10px;color:#16213A;white-space:nowrap;"><img src="assets/focuspang-logo.png" alt="" style="width:34px;height:34px;border-radius:9px;object-fit:contain;"><img src="assets/wordmark.png" alt="포커스팡" style="height:26px;width:auto;display:block;"></a>
+  <nav data-h="nav" data-fp-nav="1" style="position:relative;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;">
+    <a data-top="home" href="{{ homeHref }}" style="position:relative;z-index:1;padding:10px clamp(12px,1.8vw,26px);border-radius:999px;font-size:16px;font-weight:600;white-space:nowrap;color:#16213A;" style-hover="background:#EEF7F1;color:#16213A;">홈</a>
+    <div onMouseEnter="{{ openAbout }}" onMouseLeave="{{ closeAbout }}" style="display:flex;">
+      <a data-top="about" href="{{ aboutHref }}" style="position:relative;z-index:1;padding:10px clamp(12px,1.8vw,26px);border-radius:999px;font-size:16px;font-weight:600;white-space:nowrap;color:#16213A;" style-hover="background:#EEF7F1;color:#16213A;">소개 <span style="font-size:11px;margin-left:2px;">▾</span></a>
+      <sc-if value="{{ aboutOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;top:100%;left:{{ aboutLeft }};z-index:60;padding-top:10px;">
+          <div role="menu" style="min-width:210px;padding:8px;border-radius:18px;background:#fff;border:1px solid #EEF1F4;box-shadow:0 18px 40px -16px rgba(20,40,70,0.35);display:flex;flex-direction:column;gap:2px;">
+            <sc-for list="{{ aboutItems }}" as="s" hint-placeholder-count="5">
+              <a href="{{ s.href }}" target="{{ s.target }}" rel="noopener" onClick="{{ closeAbout }}" style="padding:12px 16px;border-radius:12px;font-size:15px;font-weight:600;color:#16213A;white-space:nowrap;display:flex;justify-content:space-between;gap:16px;" style-hover="background:#EEF7F1;color:#1E9A4B;">{{ s.label }}<span style="color:#9AA3AE;">{{ s.ext }}</span></a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+    <a data-top="news" href="news.html" style="position:relative;z-index:1;padding:10px clamp(12px,1.8vw,26px);border-radius:999px;font-size:16px;font-weight:600;white-space:nowrap;color:#16213A;" style-hover="background:#EEF7F1;color:#16213A;">뉴스</a>
+    <a data-top="guide" href="https://guide.focuspang.ai/" target="_blank" rel="noopener" style="position:relative;z-index:1;padding:10px clamp(12px,1.8vw,26px);border-radius:999px;font-size:16px;font-weight:600;white-space:nowrap;color:#16213A;" style-hover="background:#EEF7F1;color:#16213A;">시작 가이드</a>
+  </nav>
+  <div style="justify-self:end;display:flex;align-items:center;gap:10px;">
+    <div class="notranslate" translate="no" style="position:relative;">
+      <button data-h="hbtn" aria-label="언어 선택" aria-expanded="{{ langOpen }}" onClick="{{ toggleLang }}" style="width:48px;height:48px;border-radius:50%;border:none;background:#EEF2F6;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;"><img src="assets/icon-globe.png" alt="" style="width:20px;height:20px;object-fit:contain;mix-blend-mode:multiply;"></button>
+      <sc-if value="{{ langOpen }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ closeLang }}" style="position:fixed;inset:0;z-index:40;"></div>
+        <div role="menu" style="position:absolute;right:0;top:calc(100% + 10px);z-index:41;width:200px;padding:8px;border-radius:18px;background:#fff;box-shadow:0 18px 40px -16px rgba(20,40,70,0.35);border:1px solid #EEF1F4;display:flex;flex-direction:column;gap:2px;">
+          <sc-for list="{{ langs }}" as="l" hint-placeholder-count="8">
+            <button role="menuitemradio" aria-checked="{{ l.on }}" onClick="{{ l.pick }}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px;border:0;border-radius:12px;background:{{ l.bg }};font-size:15px;font-weight:{{ l.fw }};color:#16213A;cursor:pointer;text-align:left;" style-hover="background:#F1F8F3;"><span>{{ l.label }}</span><span style="color:#1E9A4B;font-weight:800;">{{ l.check }}</span></button>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+    <div id="gt_el" style="display:none;"></div>
+    <a data-h="help" href="https://portal.focuspang.com/ko/ask" target="_blank" rel="noopener" aria-label="도움말" style="width:48px;height:48px;border-radius:50%;background:#EEF2F6;font-size:19px;font-weight:700;color:#16213A;display:flex;align-items:center;justify-content:center;" style-hover="background:#E2E8EE;color:#16213A;">?</a>
+    <a data-h="login" href="login.html" style="margin-left:6px;padding:13px 28px;border-radius:999px;background:#16213A;color:#fff;font-size:16px;font-weight:700;white-space:nowrap;" style-hover="background:#24324F;color:#fff;">로그인</a>
+    <button data-h="menu" aria-label="메뉴" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display:none;width:40px;height:40px;border-radius:50%;border:none;background:#EEF2F6;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0;"><span style="width:16px;height:2px;border-radius:1px;background:#16213A;"></span><span style="width:16px;height:2px;border-radius:1px;background:#16213A;"></span><span style="width:16px;height:2px;border-radius:1px;background:#16213A;"></span></button>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #E6EBF0;box-shadow:0 18px 30px -20px rgba(20,40,70,0.35);padding:8px 16px 16px;display:flex;flex-direction:column;">
+      <sc-for list="{{ mobileLinks }}" as="m" hint-placeholder-count="8">
+        <a href="{{ m.href }}" target="{{ m.target }}" onClick="{{ closeMenu }}" style="padding:14px 8px;border-bottom:1px solid #F1F3F5;font-size:16px;font-weight:700;color:#16213A;">{{ m.label }}</a>
+      </sc-for>
+    </nav>
+  </sc-if>
+</header>
+<div aria-hidden="true" style="height:{{ spacer }};"></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;news&quot;,&quot;login&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home'|'news'|'login'&quot;}}">
+class Component extends DCLogic {
+  state = {};
+  componentDidMount() {
+    this.onResize = () => this.forceUpdate();
+    window.addEventListener("resize", this.onResize);
+    this.setupNavPill(); this.setupTranslate();
+    const hdr = document.querySelector("[data-h=hdr]"); if (hdr) { this.hRO = new ResizeObserver(() => { const hh = Math.round(hdr.getBoundingClientRect().height); if (hh && hh !== this.state.hh) this.setState({ hh }); }); this.hRO.observe(hdr); }
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onResize); this.navRO && this.navRO.disconnect(); this.hRO && this.hRO.disconnect(); }
+  setupNavPill() {
+    const nav = document.querySelector('[data-fp-nav]'); if (!nav || nav.__pill) return; nav.__pill = 1;
+    const links = [...nav.querySelectorAll('a[data-top]')]; if (!links.length) return;
+    const pill = document.createElement('span');
+    pill.style.cssText = 'position:absolute;left:0;top:0;z-index:0;border-radius:999px;background:#3DCF6E;pointer-events:none;';
+    nav.prepend(pill);
+    const page = this.props.page || "home";
+    let active = links.find(l => l.dataset.top === page) || null;
+    const T = 'transform .35s cubic-bezier(.4,0,.2,1),width .35s cubic-bezier(.4,0,.2,1),height .35s';
+    const place = (anim) => {
+      pill.style.transition = anim ? T : 'none';
+      pill.style.opacity = active ? '1' : '0';
+      links.forEach(l => { const on = l === active; l.style.color = on ? '#fff' : ''; l.style.fontWeight = on ? '700' : ''; });
+      if (!active) return;
+      const nr = nav.getBoundingClientRect(), ar = active.getBoundingClientRect();
+      pill.style.width = ar.width + 'px'; pill.style.height = ar.height + 'px';
+      pill.style.transform = 'translate(' + (ar.left - nr.left) + 'px,' + (ar.top - nr.top) + 'px)';
+    };
+    if (page === "home") links.forEach(l => { if (l.dataset.top === "home" || l.dataset.top === "about") l.addEventListener('click', () => { active = l; place(true); }); });
+    place(false); requestAnimationFrame(() => place(false)); setTimeout(() => place(false), 400);
+    this.navRO = new ResizeObserver(() => place(false)); this.navRO.observe(nav);
+  }
+  setupTranslate() {
+    window.googleTranslateElementInit = () => { try { new window.google.translate.TranslateElement({ pageLanguage: "ko", autoDisplay: false }, "gt_el"); } catch (e) {} };
+    if (!document.getElementById("gt-script")) { const s = document.createElement("script"); s.id = "gt-script"; s.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"; document.body.appendChild(s); }
+  }
+  setLang(code) {
+    this.setState({ lang: code, langOpen: false });
+    const apply = (tries) => {
+      const combo = document.querySelector("select.goog-te-combo");
+      if (!combo) { if (tries > 0) setTimeout(() => apply(tries - 1), 300); return; }
+      combo.value = code; combo.dispatchEvent(new Event("change"));
+      if (code === "ko") { document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"; const f = document.querySelector("iframe.goog-te-banner-frame"); const btn = f && f.contentDocument && f.contentDocument.querySelector("button[id$=restore]"); if (btn) btn.click(); }
+    };
+    apply(20);
+  }
+  renderVals() {
+    const w = typeof window !== "undefined" ? window.innerWidth : 1280;
+    const page = this.props.page || "home";
+    const base = page === "home" ? "" : "index.html";
+    const homeHref = page === "home" ? "#top" : base;
+    const TK = "https://fopang-content-marketing.github.io/toolkit/#home";
+    const about = [["회사 소개","https://3rinnovation.com/"],["포커스팡 소개",base + "#about"],["기능 소개",base + "#exam"],["모먼트 소개","https://www.momentlumina.com/ko"],["자기조절 툴킷 소개",TK]];
+    const LANGS = [["ko","한국어"],["en","English"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["fr","Français"],["th","ไทย"],["vi","Tiếng Việt"],["es","Español"],["de","Deutsch"]];
+    const cur = this.state.lang || "ko";
+    const ext = h => h.startsWith("http");
+    return {
+      hdrDisplay: w < 1100 ? "flex" : "grid",
+      spacer: (this.state.hh || (w < 720 ? 65 : 81)) + "px",
+      homeHref, aboutHref: base + "#about",
+      aboutOpen: !!this.state.aboutOpen,
+      aboutLeft: this.state.aboutLeft || "0px",
+      aboutItems: about.map(([label, href]) => ({ label, href, target: ext(href) ? "_blank" : "_self", ext: "" })),
+      openAbout: () => { clearTimeout(this.aboutT); const nav = document.querySelector('[data-fp-nav]'); const a = nav && nav.querySelector('a[data-top="about"]'); this.setState({ aboutOpen: true, aboutLeft: a ? (a.getBoundingClientRect().left - nav.getBoundingClientRect().left) + "px" : "0px" }); },
+      closeAbout: () => { clearTimeout(this.aboutT); this.aboutT = setTimeout(() => this.setState({ aboutOpen: false }), 120); },
+      langOpen: !!this.state.langOpen,
+      toggleLang: () => this.setState(s => ({ langOpen: !s.langOpen, menuOpen: false })),
+      closeLang: () => this.setState({ langOpen: false }),
+      langs: LANGS.map(([code, label]) => ({ label, on: cur === code, check: cur === code ? "✓" : "", bg: cur === code ? "#EAF7EE" : "transparent", fw: cur === code ? 800 : 500, pick: () => this.setLang(code) })),
+      menuOpen: !!this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen, langOpen: false })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      mobileLinks: [["홈", homeHref]].concat(about.map(([l, h]) => ["소개 · " + l, h]), [["뉴스","news.html"],["시작 가이드","https://guide.focuspang.ai/"],["도움말","https://portal.focuspang.com/ko/ask"]]).map(([label, href]) => ({ label, href, target: ext(href) ? "_blank" : "_self" })),
+    };
+  }
+}
+</script>
+</body>
+</html>
